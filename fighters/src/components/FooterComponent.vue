@@ -25,6 +25,7 @@
         background-color: rgb(80, 35, 35);
         color: whitesmoke;
         padding: 1.25rem;
+        margin:0;
     }
 
 </style>

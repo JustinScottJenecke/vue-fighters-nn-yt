@@ -2,10 +2,8 @@
   <div id="app">
 
     <header-component/>
-    
-    <main>
-      Hello Fighters!
-    </main>
+
+    <fighters-component/>
 
     <footer-component/>
 
@@ -16,6 +14,7 @@
 <script>
 import Header from './components/Header.vue';
 import Footer from './components/FooterComponent.vue';
+import Fighters from './components/Fighters.vue';
 
 
   export default {
@@ -30,7 +29,8 @@ import Footer from './components/FooterComponent.vue';
     // ----- Components -----
     components: {
       'header-component': Header,
-      'footer-component': Footer
+      'footer-component': Footer,
+      'fighters-component': Fighters
     }
 
   }
@@ -45,6 +45,10 @@ import Footer from './components/FooterComponent.vue';
     -moz-osx-font-smoothing: grayscale;
     text-align: center;
     color: #2c3e50;
+    margin: 0;
+  }
+
+  #app * {
     margin: 0;
   }
 </style>
