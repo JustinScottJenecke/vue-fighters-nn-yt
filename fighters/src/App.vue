@@ -1,16 +1,22 @@
 <template>
   <div id="app">
-    <h1> {{ title }} </h1>
-    <p>
-      {{ paraOne }}
-    </p>
-    <fighters/>
+
+    <header-component/>
+    
+    <main>
+      Hello Fighters!
+    </main>
+
+    <footer-component/>
+
   </div>
 </template>
 
 
 <script>
-  import Fighters from "./components/Fighters.vue";
+import Header from './components/Header.vue';
+import Footer from './components/FooterComponent.vue';
+
 
   export default {
   
@@ -19,16 +25,16 @@
     // ----- Data -----
     data() {
       return {
-        title: 'Fighters App',
-        paraOne: "The World's Warriors"
       }
     },
     // ----- Components -----
-    components: { 
-      Fighters 
+    components: {
+      'header-component': Header,
+      'footer-component': Footer
     }
 
   }
+        Header
 </script>
 
 
@@ -39,6 +45,6 @@
     -moz-osx-font-smoothing: grayscale;
     text-align: center;
     color: #2c3e50;
-    margin-top: 60px;
+    margin: 0;
   }
 </style>
