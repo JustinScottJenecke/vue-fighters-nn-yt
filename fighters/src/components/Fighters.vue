@@ -2,21 +2,24 @@
     <section id="fighters-elem">
 
         <h2>{{title}}</h2>
-        <ul id="fighters-list">
+        <ul id="fighters-list" v-on:click="test">
             <li 
                 class="fighter-card"
                 v-for="(fighter, i) in fightersList" 
                 :key="i"
-                v-on:click="fighter.show = !fighter.show" 
+                v-on:mouseover="fighter.show = true" v-on:mouseleave="fighter.show = false" 
             >
                <h2> 
                    {{ fighter.name }} 
                 </h2>
-               <span>
+               <span v-show="fighter.show">
                    Special Move: <b> {{fighter.speciality}} </b>
                </span>
                <button> 
                    {{fighter.show}} 
+                </button>
+                <button v-on:click="deleteFighter"> 
+                   Remove from Team
                 </button>
             </li>
         </ul>
@@ -30,18 +33,31 @@
     export default ({
         name: 'fighters-elem',
 
+        // --- props ---
+        props:{
+                // list of fighter objects
+                fightersList:{
+                    type : Array,
+                    required : true
+                }
+            },
+
+        // --- local data ---
         data() {
             return {
 
-                title: 'Select your fighter!',
+                title: 'Team Battle: Select your fighter!',
 
-                fightersList : [
-                    {name:'Riyu', speciality: 'hadoken', show: false},
-                    {name:'Gene', speciality: 'dorya', show: false},
-                    {name:'Scorpio', speciality: 'spear', show: false},
-                    {name:'Mia', speciality: 'Chou Hissatsu Shinobi-Bachi', show: false},
-                    {name:'Begeta', speciality: 'galick gun', show: false}
-                ]
+            }
+        },
+
+        // --- methods ---
+        methods : {
+            test() {
+                console.log(this.fightersList)
+            },
+            deleteFighter() {
+                this.fightersList.pop()
             }
         }
     })

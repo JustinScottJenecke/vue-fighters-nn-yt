@@ -3,7 +3,7 @@
 
     <header-component/>
 
-    <fighters-component/>
+    <fighters-component v-bind:fightersList="fightersList"/>
 
     <footer-component/>
 
@@ -24,6 +24,13 @@ import Fighters from './components/Fighters.vue';
     // ----- Data -----
     data() {
       return {
+        fightersList : [
+            {name:'Riyu', speciality: 'Hadoken', show: false},
+            {name:'Gene', speciality: 'Dorya', show: false},
+            {name:'Scorpio', speciality: 'Spear', show: false},
+            {name:'Mia', speciality: 'Chou Hissatsu Shinobi-Bachi', show: false},
+            {name:'Begeta', speciality: 'Galick gun', show: false}
+        ]        
       }
     },
     // ----- Components -----
