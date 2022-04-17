@@ -3,6 +3,9 @@
         <h1>
             {{title}}
         </h1>
+        <h2 v-on:click="changeTitle">
+            {{fightersComponentTitle}}
+        </h2>
     </header>    
 </template>
 
@@ -11,9 +14,21 @@
     export default ({
         name: 'header-component',
 
+        props : {
+            fightersComponentTitle : {
+                type : String
+            }
+        },
+
         data() {
             return {
                 title: 'Vue Fighters'
+            }
+        },
+
+        methods : {
+            changeTitle() {
+                this.fightersComponentTitle = "(Max 3 Fighters)"
             }
         }
     })

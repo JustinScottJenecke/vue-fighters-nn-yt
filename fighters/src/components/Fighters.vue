@@ -1,7 +1,12 @@
 <template>
     <section id="fighters-elem">
 
-        <h2>{{title}}</h2>
+        <h1 v-on:click="changeTitle">
+            {{fightersComponentTitle}}
+        </h1>
+        <h2>
+            {{subTitle}}
+        </h2>
         <ul id="fighters-list" v-on:click="test">
             <li 
                 class="fighter-card"
@@ -36,9 +41,12 @@
         // --- props ---
         props:{
                 // list of fighter objects
-                fightersList:{
+                fightersList : {
                     type : Array,
                     required : true
+                },
+                fightersComponentTitle : {
+                    type : String
                 }
             },
 
@@ -46,7 +54,7 @@
         data() {
             return {
 
-                title: 'Team Battle: Select your fighter!',
+                subTitle: 'Select your fighters!'
 
             }
         },
@@ -58,6 +66,9 @@
             },
             deleteFighter() {
                 this.fightersList.pop()
+            },
+            changeTitle() {
+                this.fightersComponentTitle = "Select a maximun of 3 fighters for the next round!"
             }
         }
     })

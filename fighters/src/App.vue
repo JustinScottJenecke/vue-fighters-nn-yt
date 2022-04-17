@@ -1,9 +1,14 @@
 <template>
   <div id="app">
 
-    <header-component/>
+    <header-component 
+      v-bind:fightersComponentTitle="fightersComponentTitle" 
+    />
 
-    <fighters-component v-bind:fightersList="fightersList"/>
+    <fighters-component  
+      v-bind:fightersComponentTitle="fightersComponentTitle"
+      v-bind:fightersList="fightersList"
+    />
 
     <footer-component/>
 
@@ -24,24 +29,27 @@ import Fighters from './components/Fighters.vue';
     // ----- Data -----
     data() {
       return {
+        
         fightersList : [
             {name:'Riyu', speciality: 'Hadoken', show: false},
             {name:'Gene', speciality: 'Dorya', show: false},
             {name:'Scorpio', speciality: 'Spear', show: false},
             {name:'Mia', speciality: 'Chou Hissatsu Shinobi-Bachi', show: false},
             {name:'Begeta', speciality: 'Galick gun', show: false}
-        ]        
+        ],
+
+        fightersComponentTitle: "Team Battle:"
       }
     },
+
     // ----- Components -----
     components: {
       'header-component': Header,
       'footer-component': Footer,
       'fighters-component': Fighters
     }
-
   }
-        Header
+
 </script>
 
 
