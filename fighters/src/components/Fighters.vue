@@ -1,7 +1,7 @@
 <template>
     <section id="fighters-elem">
 
-        <h1 v-on:click="changeTitle">
+        <h1 v-on:click='changeTitle'>
             {{fightersComponentTitle}}
         </h1>
         <h2>
@@ -55,7 +55,6 @@
             return {
 
                 subTitle: 'Select your fighters!'
-
             }
         },
 
@@ -66,9 +65,10 @@
             },
             deleteFighter() {
                 this.fightersList.pop()
+                console.log("Reference type delete data from Root and this component (Fighters.vue)")
             },
             changeTitle() {
-                this.fightersComponentTitle = "Select a maximun of 3 fighters for the next round!"
+                this.fightersComponentTitle = "Title was changed by Fighters.vue component Method (primitive type)"
             }
         }
     })

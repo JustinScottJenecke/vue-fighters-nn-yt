@@ -28,7 +28,7 @@
 
         methods : {
             changeTitle() {
-                this.fightersComponentTitle = "(Max 3 Fighters)"
+                this.fightersComponentTitle = "Title change by Header.vue (primitive type)"
             }
         }
     })

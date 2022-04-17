@@ -10,7 +10,10 @@
       v-bind:fightersList="fightersList"
     />
 
-    <footer-component/>
+    <footer-component
+      v-bind:fightersComponentTitle="fightersComponentTitle"
+      v-on:footerTitleChange="updateTitle($event)"
+    />
 
   </div>
 </template>
@@ -47,6 +50,15 @@ import Fighters from './components/Fighters.vue';
       'header-component': Header,
       'footer-component': Footer,
       'fighters-component': Fighters
+    },
+
+    // ----- Methods -----
+    methods : {
+
+      updateTitle(args) {
+        this.fightersComponentTitle = args
+      }
+      
     }
   }
 
